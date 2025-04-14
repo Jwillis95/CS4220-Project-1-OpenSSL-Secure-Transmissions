@@ -17,15 +17,15 @@ The client and server instructions have been adapted for the Windows installatio
 
 
 
-## Prerequisites
+## Steps
 
-# 1.)	Installing OpenSSL.
+# 1.	Install OpenSSL
 
 To install OpenSSL, visit the official website and follow the installation instructions.
 https://www.openssl.org/ 
 Once you have installed OpenSSL, ensure you configure the PATH variable.
 
-# 2.)	Generate certificates and keys
+# 2.	Generate certificates and keys
 
 Ensure you have completed step one, and that OpenSSL is properly configured for use. As you progress through these steps, enter the relevant information when prompted to do so.
 a)	Begin by generating a CA (certificate authority) with the following command:
@@ -58,7 +58,9 @@ openssl verify -CAfile ca.pem client-cert.pem
 g)	Place all the files generated from the above steps into the project’s root directory. The server will not work if these files are not within the same directory as your client and server files.
 
 
-# 3.)	Compile the program. Run the following command to compile the .c files into executables.
+# 3.	Compile the program
+
+Run the following command to compile the .c files into executables:
 
 cl server.c /I"C:\Path_to\include>" /link "C:\Path_tolib\libssl.lib" "C:\Path_to\lib\libcrypto.lib" ws2_32.lib
 
@@ -66,7 +68,9 @@ cl server.c /I"C:\Path_to\include>" /link "C:\Path_tolib\libssl.lib" "C:\Path_to
 
 Once completed, you should have two executable files.
 
-# 4.)	To run the server, ensure that the server is running first. It should read in the terminal that the server is listening on the port of your choice. Once the server is running, the client application can be launched, and you should be able to communicate with the server. To end transmissions, you can utilize Ctrl + C in either window, or type “exit”.
+# 4.	Run the server
+
+To run the server, ensure that the server is running first. It should read in the terminal that the server is listening on the port of your choice. Once the server is running, the client application can be launched, and you should be able to communicate with the server. To end transmissions, you can utilize Ctrl + C in either window, or type “exit”.
 
 
 
